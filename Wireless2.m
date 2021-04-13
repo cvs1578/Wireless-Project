@@ -63,10 +63,9 @@ x = [p1(1) p2(1)];
 y = [p1(2) p2(2)];
 plot([x(1) y(1)],[x(2) y(2)])
 
-idx_x = genuine(1,:);
-idx_y = genuine(2,:);
-idx_x1 = malicious(1,:);
-idx_y1 = malicious(2,:);
+idx = [genuine(1,:) genuine(2,:)];
+idx1 = [malicious(1,:) malicious(2,:)];
 
 
+%distances = dijkstra(src,destination);
 
