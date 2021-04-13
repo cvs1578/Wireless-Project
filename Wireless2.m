@@ -18,7 +18,7 @@ for i = 1:no_nodes
     xlabel('Network Length');
     ylabel('Network Height');
     grid on
-    pause(.5);
+    pause(.1);
 end
 for j = 1:no_nodes_m
     x_loc_m(j) = network_length*rand;
@@ -29,7 +29,7 @@ for j = 1:no_nodes_m
     xlabel('Network Length');
     ylabel('Network Height');
     grid on
-    pause(.5);
+    pause(.1);
 end
 
 source = rem(round((no_nodes+no_nodes_m)*rand),no_nodes);
@@ -48,15 +48,25 @@ hold on
 plot(x_loc(destination),y_loc(destination),'g^','linewidth',2);
 text(x_loc(destination),y_loc(destination), 'Destination')
 
+% Location of nodes
+% Genuine
+genuine = [x_loc; y_loc];
+% Malicious
+malicious = [x_loc_m; y_loc_m];
 
+% Connecting source and destination
 source_loc = [x_loc(source), y_loc(source)];
 destination_loc = [x_loc(destination), y_loc(destination)];
-%p1 = [x_loc(source) x_loc_m(destination)];
-%p2 = [y_loc(source) y_loc_m(destination)];
-%plot([p1(1) p2(1)],[p1(2) p2(2)])
+p1 = [source_loc(1) destination_loc(1)];
+p2 = [source_loc(2) destination_loc(2)];
+x = [p1(1) p2(1)];
+y = [p1(2) p2(2)];
+plot([x(1) y(1)],[x(2) y(2)])
 
-
-
+idx_x = genuine(1,:);
+idx_y = genuine(2,:);
+idx_x1 = malicious(1,:);
+idx_y1 = malicious(2,:);
 
 
 
