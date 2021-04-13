@@ -63,9 +63,12 @@ x = [p1(1) p2(1)];
 y = [p1(2) p2(2)];
 plot([x(1) y(1)],[x(2) y(2)])
 
-idx = [genuine(1,:) genuine(2,:)];
-idx1 = [malicious(1,:) malicious(2,:)];
+idx = [genuine(1,:); genuine(2,:)];
+idx1 = [malicious(1,:); malicious(2,:)];
 
+% distance from origin to destination
 
-%distances = dijkstra(src,destination);
+d_location = sqrt((destination_loc(1)-0)^2+(destination_loc(2)-0)^2);
+d_source = sqrt((source_loc(1)-destination_loc(1))^2+(source_loc(2)-destination_loc(2))^2);
+%distances = dijkstra(idx(1,:),[floor(d_source),floor(d_location)]);
 
