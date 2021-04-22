@@ -36,6 +36,7 @@ D = distance(x_loc, y_loc,100); %100 = maximum distance UAV travel before reachi
 
 %Now we graph and find the path and distance from source to destination.
 G=graph(s,t,W);
-p=plot(G, 'XData', x_loc, 'YData', y_loc, 'EdgeColor', 'k', 'NodeColor', 'k'); %, 'EdgeLabel', G.Edges.Weight
+p=plot(G, 'XData', x_loc, 'YData', y_loc, 'EdgeColor', 'k', 'NodeColor', 'k');
+set(gca, 'YDir','reverse')
 [path,dis] = shortestpath(G,source,destination)
 highlight(p,path,'EdgeColor','b','NodeColor', 'b', 'LineWidth', 3);
